@@ -45,7 +45,16 @@ void insert(int add)
 		arr[temp] = add;
 	}
 }
-
+void Delete(int index)
+{
+	if(index >= 10 || index < 0) 
+			printf("Enter the index less than 10.\n");
+	else
+	{
+		arr[index] = 0;
+		printf("\nElement at index %d has been deleted.\n", index);
+	}
+}
 
 void searching(int search)
 {
@@ -72,7 +81,17 @@ void searching(int search)
 	}	
 }
 
-int main() 
+void list()
+{
+	int i;
+	for(i = 0;i < 10;i++)
+	{
+		printf("\n %d.index ==> %d",i,arr[i]);
+	}
+}
+
+
+int main()
 {
 	insert(10);
 	insert(11);
@@ -86,8 +105,15 @@ int main()
 	insert(221);
 	insert(666);
 	print();
-	
 	searching(221);
 	searching(666);
 	searching(777);
+	Delete(0);
+	Delete(10);
+	Delete(-1);
+	list();
+	Delete(1);
+	list();
+	
+	return 0;
 } 
